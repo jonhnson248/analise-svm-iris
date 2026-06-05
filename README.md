@@ -1,1 +1,37 @@
-:🌸 Análise do Algoritmo SVM na Base de Dados IrisEste repositório contém o código e os relatórios do experimento prático utilizando o algoritmo Support Vector Machine (SVM) para a classificação das espécies de flores Iris (Setosa, Versicolor e Virginica).🔬 Metodologia CientíficaPara garantir que os resultados fossem estatisticamente justos e não dependessem do fator "sorte" no sorteio dos dados, o experimento foi estruturado em 30 realizações independentes.Em cada uma das 30 rodadas, a base de dados foi embaralhada e dividida dinamicamente (70% para treino e 30% para teste) usando a própria rodada como semente (random_state).O projeto foi dividido em duas fases principais:Exploração Isolada: Analisamos o impacto individual de cada parâmetro (Tipos de Kernel, variações do parâmetro de regularização $C$ e variações do parâmetro $Gamma$).Comparação Direta: Reunimos os melhores hiperparâmetros de cada categoria para um teste de estresse conjunto ao longo das 30 rodadas.📊 Como o SVM Trata a Base Iris?O comportamento do modelo varia de acordo com as características geométricas e biológicas de cada espécie:Iris Setosa (Fácil Separação): Apresenta características físicas muito distintas das demais. O SVM consegue traçar um hiperplano linear limpo, alcançando sempre 100% de acerto em todas as rodadas.Iris Versicolor e Virginica (Zonas de Fronteira): Essas duas espécies possuem tamanhos de pétalas e sépalas que se sobrepõem na natureza. O SVM precisa criar fronteiras de decisão refinadas nessa região. Dependendo de quais flores são sorteadas para o teste, ocorrem pequenas confusões entre as duas classes.🏆 Resultados e Conclusões GeraisNo gráfico comparativo final das 30 realizações, avaliamos os três melhores cenários:Melhor Kernel: linearMelhor C: 10.0Melhor Gamma: 0.1Veredicto: O Kernel Linear consagrou-se como o grande vencedor. Ele demonstrou maior estabilidade no topo, atingindo a acurácia máxima de $1.00$ ($100\%$) na maioria das rodadas e sofrendo menos oscilações que os modelos com Kernel RBF (ajustados por $C=10.0$ ou $Gamma=0.1$). Isso prova que, para a base Iris, mapeamentos lineares simples geram fronteiras mais robustas e menos propensas a ruídos.
+# 🌸 Análise do Algoritmo SVM na Base de Dados Iris
+
+Este repositório contém o código e os relatórios do experimento prático utilizando o algoritmo **Support Vector Machine (SVM)** para a classificação das espécies de flores Iris (*Setosa*, *Versicolor* e *Virginica*).
+
+---
+
+## 🔬 Metodologia Científica
+
+Para garantir que os resultados fossem estatisticamente justos e não dependessem do fator "sorte" no sorteio dos dados, o experimento foi estruturado em **30 realizações independentes**.
+
+Em cada uma das 30 rodadas, a base de dados foi embaralhada e dividida dinamicamente (70% para treino e 30% para teste) usando a própria rodada como semente (`random_state`).
+
+O projeto foi dividido em duas fases principais:
+
+1. **Exploratória Isolada:** Analisamos o impacto individual de cada parâmetro (Tipos de Kernel, variações do parâmetro de regularização $C$ e variações do parâmetro $Gamma$).
+2. **Comparação Direta:** Reunimos os melhores hiperparâmetros de cada categoria para um teste de estresse conjunto ao longo das 30 rodadas.
+
+---
+
+## 📊 Como o SVM Trata a Base Iris?
+
+O comportamento do modelo varia de acordo com as características geométricas e biológicas de cada espécie:
+
+* **Iris Setosa (Fácil Separação):** Apresenta características físicas muito distintas das demais. O SVM consegue traçar um hiperplano linear limpo, alcançando sempre **100% de acerto** em todas as rodadas.
+* **Iris Versicolor e Virginica (Zonas de Fronteira):** Essas duas espécies possuem tamanhos de pétalas e sépalas que se sobrepõem na natureza. O SVM precisa criar fronteiras de decisão refinadas nessa região. Dependendo de quais flores são sorteadas para o teste, ocorrem pequenas confusões entre as duas classes.
+
+---
+
+## 🏆 Resultados e Conclusões Gerais
+
+No gráfico comparativo final das 30 realizações, avaliamos os três melhores cenários:
+
+* **Melhor Kernel:** `linear`
+* **Melhor C:** `10.0`
+* **Melhor Gamma:** `0.1`
+
+**Veredicto:** O **Kernel Linear** consagrou-se como o grande vencedor. Ele demonstrou maior estabilidade no topo, atingindo a acurácia máxima de $1.00$ ($100\%$) na maioria das rodadas e sofrendo menos oscilações que os modelos com Kernel RBF (ajustados por $C=10.0$ ou $Gamma=0.1$). Isso prova que, para a base Iris, mapeamentos lineares simples geram fronteiras mais robustas e menos propensas a ruídos.
